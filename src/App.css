@@ -1,38 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Odibee+Sans&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 100vh;
+  font-family: 'Odibee Sans';
+  font-family: min(1.1rem, 1.3rem);
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(129deg, #664c13 0%, #bb1b1bd2 100%);
+  color: yellow;
+  padding: 0 1.2rem;
+  margin: -1rem;
+  position: static;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.project-header .project-name {
+  font-size: max(1.2rem, 1.5rem, 1.8rem, 2.1rem);
+  font-family: 'Koulen';
 }
 
-.App-header {
-  background-color: #282c34;
+.create-task {
+  background-color: #fff;
+  min-height: 40px;
+  width: 10rem;
+  font-family: 'Odibee Sans';
+  font-size: x-large;
+  color: #210606;
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.create-task:hover {
+  background-color: yellow;
+  box-shadow: inset 2px 1px 1px #fff;
+  transition: all 500ms ease-in-out;
+}
+
+.main-board {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Koulen';
+}
+
+.main-board > * {
+  border: 3px solid #210606;
+  width: 50%;
   min-height: 100vh;
+  max-height: auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin: -2px -5px;
+  padding: 0 .3rem;
+}
+
+.create-modal {
+  background-color: #885302;
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
-.App-link {
-  color: #61dafb;
+.create-modal h1 {
+  color: yellow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  width: 75%;
+}
+
+.form > * {
+  min-height: 30px;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #210606;
+  font-family: 'Odibee Sans';
+  font-size: max(1rem, 1.2rem, 1.5rem);
+}
+
+.form button {
+  background-color: yellow;
+  color: #210606;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.form button:hover {
+  background-color: #210606;
+  color: yellow;
+  transition: all 300ms ease;
 }
