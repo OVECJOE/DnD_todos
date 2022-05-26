@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DnD_todos/static/css/main.023f8d3c.css",
+    "main.js": "/DnD_todos/static/js/main.9fb45063.js",
+    "static/js/787.7ab45602.chunk.js": "/DnD_todos/static/js/787.7ab45602.chunk.js",
+    "index.html": "/DnD_todos/index.html",
+    "main.023f8d3c.css.map": "/DnD_todos/static/css/main.023f8d3c.css.map",
+    "main.9fb45063.js.map": "/DnD_todos/static/js/main.9fb45063.js.map",
+    "787.7ab45602.chunk.js.map": "/DnD_todos/static/js/787.7ab45602.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.023f8d3c.css",
+    "static/js/main.9fb45063.js"
+  ]
+}
