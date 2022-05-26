@@ -68,11 +68,12 @@
   background-color: #885302;
   position: fixed;
   width: 50%;
-  height: 50%;
+  height:  calc(50% + 20vmin);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.2rem 0;
   z-index: 2;
   top: 50%;
   left: 50%;
@@ -111,4 +112,103 @@
   background-color: #210606;
   color: yellow;
   transition: all 300ms ease;
+}
+
+.unstarted-tasks, .pending-tasks, .completed-tasks {
+  background-color: hsla(41, 69%, 24%, 0.582);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  align-items: center;
+  padding: 1.2rem;
+}
+
+.tasks * {
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  background-color: #1b1204;
+  color: #210606;
+  padding: .6rem .3rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.task .task-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 5px double yellow;
+  /* margin: .7rem 0; */
+}
+
+.task .task-title h3 {
+  font-size: 1.2rem;
+  color: yellow;
+}
+
+.task .task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task .task-info .task-desc {
+  color: white;
+  font-family: cursive;
+  font-size: .8rem;
+}
+
+.task-info .task-datetime {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.task-datetime p {
+  color: #fff;
+  font-family: monospace;
+  font-size: .55rem;
+  background-color: #885302;
+  padding: .1rem .3rem;
+  align-self: center;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+}
+
+.task .task-title span {
+  color: #123232;
+  align-self: flex-end;
+  padding: 0 1rem;
+  margin: 0 0 .1rem;
+}
+
+.unstarted-tasks span {
+  background-color: rgba(230, 88, 88, 0.938);
+}
+
+.pending-tasks span {
+  background-color: rgba(230, 221, 88, 0.938);
+}
+
+.completed-tasks span {
+  background-color: rgba(112, 230, 88, 0.938);
+}
+
+strong {
+  background-color: rgba(18, 50, 50, 0.78);
+}
+
+.no-task {
+  font-size: xx-large;
+  color: #1b1204;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }

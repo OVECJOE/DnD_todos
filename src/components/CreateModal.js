@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function CreateModal({ tasks, setTasks, setCreateFlag }) {
     const [ task, setTask ] = useState({
@@ -7,13 +7,9 @@ function CreateModal({ tasks, setTasks, setCreateFlag }) {
         started: false,
         completed: false,
         created_at: Date().toString(),
-        completed_at: ''
+        completed_at: '',
+        assigned_to: ''
     });
-
-    
-    useEffect(() => {
-        localStorage.setItem('DnD_tasks', JSON.stringify(tasks));
-     }, [tasks]);
 
     const handleChange = (event) => {
         const { name, type, checked, value } = event.target;
@@ -39,7 +35,6 @@ function CreateModal({ tasks, setTasks, setCreateFlag }) {
             setCreateFlag(false);
             return prevTasks;
         });
-        console.log(tasks);
     };
 
     return (

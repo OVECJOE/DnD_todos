@@ -1,16 +1,18 @@
+import Tasks from './Tasks';
+
 function NotStarted(props) {
+    const notStartedTasks = props.tasks.filter(task => !task.started);
+
     return (
         <section className="unstarted-tasks">
-            <h1>Not Started Tasks</h1>
-            <ul className="tasks">
-                {props.tasks.map((task) => {
-                    return (
-                        <li key={props.tasks.indexOf()} className="task">
-                            {task.title}
-                        </li>
-                    )
-                })}
-            </ul>
+            {notStartedTasks.length ?
+                <Tasks
+                    tasks={notStartedTasks}
+                    onDragStart={props.onDragStart}
+                /> : <div className='no-task'>
+                    No New Task
+                </div>
+            }
         </section>
     );
 }
