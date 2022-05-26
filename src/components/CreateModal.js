@@ -1,24 +1,7 @@
-import { useState } from "react";
+import { handleChange, useTask } from "./handleChange";
 
 function CreateModal({ tasks, setTasks, setCreateFlag }) {
-    const [ task, setTask ] = useState({
-        title: '',
-        desc: '',
-        started: false,
-        completed: false,
-        created_at: Date().toString(),
-        completed_at: '',
-        assigned_to: ''
-    });
-
-    const handleChange = (event) => {
-        const { name, type, checked, value } = event.target;
-
-        setTask((prevTask) => ({
-            ...prevTask,
-            [name]: type === 'checkbox' ? checked : value,
-        }))
-    };
+    const [task, setTask] = useTask();
 
     const createTask = (event) => {
         event.preventDefault();
@@ -44,14 +27,14 @@ function CreateModal({ tasks, setTasks, setCreateFlag }) {
                 <input
                     type='text'
                     placeholder="Enter Task Title"
-                    onChange={handleChange}
+                    onChange={(event) => handleChange(event, setTask)}
                     name='title'
                     value={task.title}
                     required
                 />
                 <textarea
                     placeholder="Enter Description"
-                    onChange={handleChange}
+                    onChange={(event) => handleChange(event, setTask)}
                     name='desc'
                     value={task.desc}
                     rows='5'
